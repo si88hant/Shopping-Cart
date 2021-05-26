@@ -1,17 +1,6 @@
 import React from "react";
 
 class CartItem extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      price: 999,
-      title: "Phone",
-      qty: 1,
-      img: ""
-    };
-    //  this.increaseQuantity = this.increaseQuantity.bind(this);
-  }
-
   testing() {
     const promise = new Promise((resolve, reject) => {
       setTimeout(() => {
@@ -56,15 +45,15 @@ class CartItem extends React.Component {
   };
 
   render() {
-    const { price, title, qty } = this.state; //object destructuring
+    const { price, title, qty } = this.props.product; //object destructuring
     return (
       <div className="cart-item">
         <div className="left-block">
           <img style={styles.image} />
         </div>
         <div className="right-block">
-          <div style={{ fontSize: 25 }}>{price}</div>
-          <div style={{ color: "#777" }}>{title}</div>
+          <div style={{ fontSize: 25 }}>{title}</div>
+          <div style={{ color: "#777" }}>{price}</div>
           <div style={{ color: "#777" }}>Qty: {qty}</div>
           <div classNmae="cart-item-actions">
             {/* Buttons */}
